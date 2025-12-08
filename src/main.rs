@@ -2,6 +2,7 @@ use std::io::{BufWriter, Write, stdout};
 use std::env;
 
 mod day1;
+mod common;
 
 fn main() {
   let stdout = stdout();
