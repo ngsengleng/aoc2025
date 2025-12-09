@@ -1,11 +1,15 @@
 use std::io::{BufWriter, Write, stdout};
 use std::env;
 
-mod day2;
 mod common;
 
-// current active pkg, since dynamic imports doesnt seem to be a thing
-use day2 as pkg;
+// list all modules even tho they will all be compiled during cargo run coz im lazy
+mod day1;
+mod day2;
+mod day3;
+
+// manually change current active pkg, since dynamic imports doesnt seem to be a thing
+use day3 as pkg;
 
 fn main() {
   let stdout = stdout();
