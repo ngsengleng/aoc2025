@@ -1,6 +1,6 @@
 const MAX: i32 = 100;
 
-use crate::common::read_file;
+use crate::common::{read_file, InputType};
 
 fn rotate_left(current_value: i32, rotation: i32) -> (i32, i32) {
   let mut rounds = rotation / MAX;
@@ -33,7 +33,7 @@ fn rotate(direction: char, current_value: i32, distance: i32) -> (i32, i32) {
 pub fn solve(input_path: String, is_part_1: bool) -> String {
   let mut res = 0;
   let mut curr = 50;
-  let instructions: Vec<String> = read_file(&input_path);
+  let instructions: Vec<String> = read_file(&input_path, InputType::Lines);
   for instruction in instructions {
     let direction = &instruction.chars().nth(0);
     let distance = &instruction[1..].parse::<i32>().expect("Error parsing distance");
